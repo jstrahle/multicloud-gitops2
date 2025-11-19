@@ -1,12 +1,7 @@
-global:
-  options:
-    useCSV: False
-    syncPolicy: Automatic
-    installPlanApproval: Automatic
 clusterGroup:
+  name: group-one
   argoProjects:
     - test
-  name: group-one
   isHubCluster: false
   namespaces:
     - sample-app
