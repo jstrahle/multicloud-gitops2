@@ -5,8 +5,6 @@ clusterGroup:
   isHubCluster: false
   namespaces:
     - sample-app
-  projects:
-    - sample-app
   applications:
     sample-app:
       name: sample-app
