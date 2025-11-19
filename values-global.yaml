@@ -5,8 +5,25 @@ global:
     useCSV: false
     syncPolicy: Automatic
     installPlanApproval: Automatic
+  gitops:
+    operatorConfig:
+      env:
+        - name: CLUSTER_SCOPED_ARGO_ROLLOUTS_NAMESPACES
+          value: "openshift-gitops,namespace1,namespace2,namespace3"
 main:
   clusterGroupName: hub
   multiSourceConfig:
     enabled: true
     clusterGroupChartVersion: "0.9.*"
+namespaces:
+  - devapp2
+projects:
+  - devapp2
+applications:
+  devapp2:
+    name: devapp2
+    namespace: devapp2
+    project: devapp2
+    repoURL: https://github.com/jstrahle/sample-app.git
+    path: charts/sample-app
+    targetRevision: main
